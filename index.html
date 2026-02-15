@@ -379,6 +379,14 @@
     </div>
 
     <audio id="audioPlayer"></audio>
+    // --- SECURITY GATE ---
+// Check if the user has completed the Login/Slot Machine sequence
+const sessionActive = localStorage.getItem("nitro_user");
+
+if (!sessionActive) {
+    // If no user data is found, redirect to login immediately
+    window.location.href = "login.html";
+}
 
     <script>
         // --- LOAD USER PROFILE ---
@@ -498,4 +506,5 @@
         });
     </script>
 </body>
+
 </html>
